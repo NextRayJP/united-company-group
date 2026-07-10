@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNITED COMPANY GROUP｜車のお探し専門店｜新潟市西蒲区</title>
+<meta name="description" content="UNITED COMPANY GROUP（㈲いばら／UNITED CARS／United Square Ltd.）は新潟市西蒲区のおしゃれカー専門店。全国131のオークション会場から理想の1台をお探しします。新車・中古車販売、車検・点検、鈑金・塗装、高価買取まで。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#20242a; --ink-soft:#4b525c; --line:#e7e1d8;
+  --bg:#ffffff; --cream:#f8f4ee; --cream2:#f1eadf;
+  --wood:#7a5232; --wood-d:#5c3d24; --wood-l:#a9805a;
+  --gold:#c99b52;
+  --g1:#3fa535; --g2:#2ea3d6; --g3:#f4c430; --g4:#f08a24; --g5:#e05b8a;
+  --brand:linear-gradient(90deg,#3fa535,#2ea3d6,#f4c430,#f08a24,#e05b8a);
+  --shadow:0 18px 50px -20px rgba(40,30,20,.35);
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--bg);line-height:1.8;overflow-x:hidden;font-size:15px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.en{font-family:"Poppins",sans-serif;letter-spacing:.04em}
+section{position:relative}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- header ---------- */
+header{position:fixed;top:0;left:0;width:100%;z-index:100;transition:.35s;
+  background:rgba(255,255,255,0);}
+header.solid{background:rgba(255,255,255,.96);box-shadow:0 6px 24px -14px rgba(0,0,0,.3);backdrop-filter:blur(8px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff;transition:.35s}
+header.solid .logo{color:var(--ink)}
+.logo .mark{width:42px;height:42px;border-radius:11px;background:var(--brand);display:grid;place-items:center;color:#fff;font-family:"Poppins";font-weight:800;font-size:20px;box-shadow:var(--shadow)}
+.logo b{font-family:"Poppins";font-weight:700;font-size:17px;letter-spacing:.06em;line-height:1.15;display:block}
+.logo small{font-size:10px;letter-spacing:.22em;opacity:.8;display:block}
+nav.main{display:flex;align-items:center;gap:26px}
+nav.main a.nl{color:#fff;font-weight:500;font-size:14px;position:relative;transition:.3s}
+header.solid nav.main a.nl{color:var(--ink)}
+nav.main a.nl::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--brand);transition:.3s}
+nav.main a.nl:hover::after{width:100%}
+.tel-head{display:flex;flex-direction:column;align-items:flex-end;line-height:1.1}
+.tel-head .lbl{font-size:10px;letter-spacing:.15em;color:#fff;opacity:.85}
+header.solid .tel-head .lbl{color:var(--ink-soft)}
+.tel-head .num{font-family:"Poppins";font-weight:700;font-size:20px;color:#fff}
+header.solid .tel-head .num{color:var(--wood)}
+.btn-line{background:#06c755;color:#fff;padding:11px 18px;border-radius:40px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:7px;box-shadow:0 8px 20px -8px rgba(6,199,85,.7)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.burger span{width:26px;height:2px;background:#fff;transition:.3s}
+header.solid .burger span{background:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{height:100vh;min-height:620px;position:relative;overflow:hidden;display:flex;align-items:center}
+.slides{position:absolute;inset:0}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);transition:opacity 1.4s ease, transform 7s ease}
+.slide.on{opacity:1;transform:scale(1)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(20,15,10,.72) 0%,rgba(20,15,10,.35) 55%,rgba(20,15,10,.15) 100%)}
+.hero-inner{position:relative;z-index:3;color:#fff}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:"Poppins";font-weight:600;letter-spacing:.18em;font-size:12px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:8px 16px;border-radius:40px;backdrop-filter:blur(4px);margin-bottom:26px}
+.hero .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--brand)}
+.hero h1{font-size:clamp(2.1rem,5.5vw,4rem);font-weight:900;line-height:1.28;letter-spacing:.01em;text-shadow:0 4px 30px rgba(0,0,0,.4)}
+.hero h1 .hl{background:var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent;filter:brightness(1.25)}
+.hero p.lead{margin-top:22px;font-size:clamp(1rem,2vw,1.2rem);font-weight:500;max-width:600px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.hero-cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:44px;font-weight:700;font-size:15px;transition:.3s;cursor:pointer}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 14px 34px -12px rgba(224,91,138,.6)}
+.btn-primary:hover{transform:translateY(-3px)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.6);backdrop-filter:blur(4px)}
+.btn-ghost:hover{background:#fff;color:var(--ink)}
+.hero-side{position:absolute;right:34px;bottom:30px;z-index:3;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.hero-dots{display:flex;gap:9px}
+.hero-dots i{width:34px;height:4px;border-radius:4px;background:rgba(255,255,255,.4);cursor:pointer;transition:.3s}
+.hero-dots i.on{background:#fff}
+.scroll-hint{writing-mode:vertical-rl;color:#fff;font-family:"Poppins";font-size:11px;letter-spacing:.2em;opacity:.85;position:absolute;left:34px;bottom:30px;z-index:3;display:flex;align-items:center;gap:12px}
+.scroll-hint::after{content:"";width:1px;height:46px;background:#fff}
+
+/* ---------- brands strip ---------- */
+.brands{background:var(--wood-d);color:#fff;padding:30px 0}
+.brands .row{display:flex;align-items:center;justify-content:center;gap:14px 44px;flex-wrap:wrap;text-align:center}
+.brands .b{display:flex;flex-direction:column;gap:2px}
+.brands .b b{font-family:"Poppins";font-weight:700;letter-spacing:.08em;font-size:18px}
+.brands .b span{font-size:11px;opacity:.75;letter-spacing:.14em}
+.brands .sep{width:1px;height:34px;background:rgba(255,255,255,.25)}
+
+/* ---------- section heading ---------- */
+.sec{padding:clamp(64px,9vw,110px) 0}
+.sec.cream{background:var(--cream)}
+.head{text-align:center;margin-bottom:52px}
+.head .en{display:block;font-weight:700;font-size:13px;letter-spacing:.28em;color:var(--wood-l);text-transform:uppercase;margin-bottom:12px}
+.head h2{font-size:clamp(1.6rem,3.6vw,2.5rem);font-weight:900;line-height:1.4}
+.head h2 .u{background:var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+.head .sub{margin-top:16px;color:var(--ink-soft);font-size:15px}
+.head::after{content:"";display:block;width:56px;height:4px;background:var(--brand);border-radius:4px;margin:22px auto 0}
+
+/* ---------- message ---------- */
+.msg{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.msg-img{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.msg-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.msg-img .badge{position:absolute;left:20px;bottom:20px;background:#fff;border-radius:14px;padding:14px 20px;box-shadow:var(--shadow)}
+.msg-img .badge b{font-family:"Poppins";font-size:30px;color:var(--wood);line-height:1;display:block}
+.msg-img .badge span{font-size:11px;color:var(--ink-soft);letter-spacing:.1em}
+.msg h3{font-size:clamp(1.35rem,3vw,2rem);font-weight:900;line-height:1.6;margin-bottom:20px}
+.msg h3 .u{color:var(--wood)}
+.msg p{color:var(--ink-soft);margin-bottom:16px}
+.promises{list-style:none;margin-top:26px;display:grid;gap:12px}
+.promises li{display:flex;gap:13px;align-items:flex-start;font-weight:500}
+.promises li .ck{flex:none;width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;margin-top:2px}
+
+/* ---------- services ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;transition:.35s;position:relative;overflow:hidden}
+.svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--brand);transform:scaleX(0);transform-origin:left;transition:.4s}
+.svc:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.svc:hover::before{transform:scaleX(1)}
+.svc .ic{width:60px;height:60px;border-radius:16px;background:var(--cream);display:grid;place-items:center;font-size:28px;margin-bottom:20px}
+.svc h4{font-size:19px;font-weight:700;margin-bottom:10px}
+.svc p{color:var(--ink-soft);font-size:14px}
+
+/* ---------- lineup ---------- */
+.line-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.line-cat{position:relative;border-radius:16px;overflow:hidden;background:var(--wood);aspect-ratio:16/10;display:flex;align-items:flex-end;color:#fff;box-shadow:var(--shadow);transition:.35s}
+.line-cat:hover{transform:translateY(-6px)}
+.line-cat .emj{position:absolute;inset:0;display:grid;place-items:center;font-size:64px;opacity:.9;background:linear-gradient(135deg,rgba(122,82,50,.9),rgba(92,61,36,.95))}
+.line-cat .cap{position:relative;z-index:2;padding:18px 20px;width:100%;background:linear-gradient(to top,rgba(0,0,0,.55),transparent)}
+.line-cat .cap b{font-size:18px;font-weight:700;display:block}
+.line-cat .cap span{font-family:"Poppins";font-size:11px;letter-spacing:.15em;opacity:.85}
+
+/* ---------- stock ---------- */
+.stock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px -18px rgba(0,0,0,.3);border:1px solid var(--line);transition:.35s}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.card .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.card:hover .ph img{transform:scale(1.07)}
+.card .tag{position:absolute;top:12px;left:12px;background:var(--brand);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:30px;letter-spacing:.05em}
+.card .body{padding:20px 22px}
+.card .body h4{font-size:18px;font-weight:700;margin-bottom:4px}
+.card .body .grade{font-size:12px;color:var(--ink-soft);margin-bottom:14px}
+.card .price{display:flex;align-items:baseline;gap:4px;border-top:1px dashed var(--line);padding-top:14px}
+.card .price .p{font-family:"Poppins";font-weight:800;font-size:30px;color:var(--wood);line-height:1}
+.card .price .y{font-weight:700;font-size:15px;color:var(--wood)}
+.card .price .tax{margin-left:auto;font-size:11px;color:var(--ink-soft)}
+.stock-note{text-align:center;margin-top:36px;color:var(--ink-soft);font-size:14px}
+
+/* ---------- cafe / concept ---------- */
+.cafe{background:var(--wood-d);color:#fff;overflow:hidden}
+.cafe .inner{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+.cafe .txt{padding:clamp(50px,7vw,90px) clamp(30px,5vw,70px)}
+.cafe .txt .en{color:var(--g3);font-weight:700;letter-spacing:.28em;font-size:13px}
+.cafe .txt h2{font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:900;line-height:1.45;margin:14px 0 22px}
+.cafe .txt p{color:rgba(255,255,255,.82);margin-bottom:16px}
+.cafe .pics{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.cafe .pics img{width:100%;height:100%;object-fit:cover;min-height:170px}
+.cafe .pics .big{grid-column:1/3}
+
+/* ---------- flow ---------- */
+.flow{max-width:840px;margin:0 auto;position:relative}
+.flow::before{content:"";position:absolute;left:31px;top:20px;bottom:20px;width:2px;background:var(--line)}
+.step{display:flex;gap:26px;padding:16px 0;position:relative}
+.step .no{flex:none;width:64px;height:64px;border-radius:50%;background:#fff;border:2px solid var(--wood-l);display:grid;place-items:center;font-family:"Poppins";font-weight:800;font-size:22px;color:var(--wood);z-index:2;box-shadow:0 8px 20px -12px rgba(0,0,0,.3)}
+.step:nth-child(odd) .no{background:var(--brand);color:#fff;border-color:transparent}
+.step .st-body{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 24px;flex:1;box-shadow:0 8px 24px -20px rgba(0,0,0,.4)}
+.step .st-body h4{font-size:17px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.step .st-body h4 .en{font-size:11px;color:var(--wood-l);letter-spacing:.15em}
+.step .st-body p{color:var(--ink-soft);font-size:14px}
+
+/* ---------- reason ---------- */
+.reason{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(30px,4vw,54px);box-shadow:var(--shadow)}
+.reason h3{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;line-height:1.5;margin-bottom:18px}
+.reason h3 .u{background:var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+.reason p{color:var(--ink-soft);margin-bottom:14px}
+.cmp{display:grid;gap:16px}
+.cmp .row{border-radius:16px;padding:22px 24px}
+.cmp .other{background:var(--cream);border:1px dashed var(--wood-l)}
+.cmp .ours{background:var(--wood-d);color:#fff}
+.cmp .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;margin-bottom:6px;opacity:.85}
+.cmp .row b{font-size:19px;font-weight:900;line-height:1.4}
+.cmp .ours b .hl{color:var(--g3)}
+.cmp .arrow{text-align:center;font-size:24px;color:var(--wood-l)}
+
+/* ---------- voices ---------- */
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.voice{background:#fff;border-radius:var(--radius);padding:30px 28px;border:1px solid var(--line);position:relative}
+.voice .stars{color:var(--g3);font-size:16px;letter-spacing:2px;margin-bottom:14px}
+.voice p{font-size:14.5px;color:var(--ink);margin-bottom:18px}
+.voice .who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+.voice .who .av{width:44px;height:44px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:700}
+.voice .who b{font-size:14px;display:block}
+.voice .who span{font-size:12px;color:var(--ink-soft)}
+.voice .q{position:absolute;top:18px;right:24px;font-family:"Poppins";font-size:60px;color:var(--cream2);font-weight:800;line-height:1}
+
+/* ---------- shop / contact ---------- */
+.shop-banner{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-bottom:36px;max-height:420px}
+.shop-banner img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/6;min-height:240px}
+.shop-banner .sb-cap{position:absolute;left:0;bottom:0;width:100%;padding:40px 28px 22px;background:linear-gradient(to top,rgba(20,15,10,.78),transparent);color:#fff}
+.shop-banner .sb-cap b{font-size:clamp(1.1rem,2.4vw,1.5rem);font-weight:900;display:block}
+.shop-banner .sb-cap span{font-size:13px;opacity:.9}
+.shop{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.info-table{width:100%;border-collapse:collapse;margin-bottom:26px}
+.info-table th,.info-table td{text-align:left;padding:15px 6px;border-bottom:1px solid var(--line);vertical-align:top;font-size:15px}
+.info-table th{width:120px;color:var(--wood);font-weight:700;white-space:nowrap}
+.map-box{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);min-height:340px}
+.map-box iframe{width:100%;height:100%;min-height:400px;border:0;display:block}
+.contact-cta{margin-top:8px;background:var(--wood-d);border-radius:24px;padding:clamp(34px,5vw,56px);text-align:center;color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.contact-cta::before{content:"";position:absolute;inset:0;background:var(--brand);opacity:.13}
+.contact-cta > *{position:relative;z-index:2}
+.contact-cta .en{color:var(--g3);letter-spacing:.28em;font-weight:700;font-size:13px}
+.contact-cta h2{font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:900;margin:12px 0 10px}
+.contact-cta p{color:rgba(255,255,255,.85);margin-bottom:26px}
+.cta-tel{font-family:"Poppins";font-weight:800;font-size:clamp(2rem,5vw,3rem);color:#fff;display:inline-flex;align-items:center;gap:14px;line-height:1}
+.cta-tel small{font-size:13px;font-weight:500;opacity:.8;letter-spacing:.1em}
+.cta-hours{margin-top:8px;font-size:13px;color:rgba(255,255,255,.75)}
+.cta-btns{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- footer ---------- */
+footer{background:#191c21;color:#fff;padding:64px 0 30px}
+.f-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12)}
+.f-brand .logo .mark{box-shadow:none}
+.f-brand p{color:rgba(255,255,255,.6);font-size:13px;margin-top:18px;line-height:1.9}
+.f-col h5{font-size:13px;letter-spacing:.15em;color:var(--g3);font-weight:700;margin-bottom:18px;font-family:"Poppins"}
+.f-col a{display:block;color:rgba(255,255,255,.72);font-size:14px;padding:7px 0;transition:.3s}
+.f-col a:hover{color:#fff;padding-left:6px}
+.f-bottom{padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;color:rgba(255,255,255,.5);font-size:12px}
+.f-sns{display:flex;gap:12px}
+.f-sns a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;transition:.3s}
+.f-sns a:hover{background:var(--brand)}
+
+/* floating */
+.float-line{position:fixed;right:20px;bottom:20px;z-index:90;background:#06c755;color:#fff;padding:14px 22px;border-radius:44px;font-weight:700;font-size:14px;box-shadow:0 14px 30px -10px rgba(6,199,85,.7);display:flex;align-items:center;gap:9px;transition:.3s}
+.float-line:hover{transform:translateY(-3px)}
+
+/* mobile nav */
+.m-nav{position:fixed;inset:0;background:rgba(25,20,15,.98);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:.4s}
+.m-nav.open{opacity:1;pointer-events:auto}
+.m-nav a{color:#fff;font-size:20px;font-weight:700;padding:12px}
+.m-nav a .en{display:block;font-size:11px;color:var(--g3);letter-spacing:.2em;margin-top:2px}
+.m-close{position:absolute;top:26px;right:26px;color:#fff;font-size:34px;cursor:pointer}
+
+@media(max-width:960px){
+  .msg,.reason,.shop,.cafe .inner{grid-template-columns:1fr}
+  .svc-grid,.line-grid,.stock-grid,.voice-grid{grid-template-columns:1fr 1fr}
+  .f-top{grid-template-columns:1fr 1fr}
+  .cafe .pics{order:-1}
+}
+@media(max-width:1024px){
+  nav.main,.tel-head,.bar .btn-line{display:none}
+  .burger{display:flex}
+}
+@media(max-width:760px){
+  .svc-grid,.line-grid,.stock-grid,.voice-grid,.f-top{grid-template-columns:1fr}
+  .brands .sep{display:none}
+  .hero-side,.scroll-hint{display:none}
+  .cafe .pics{grid-template-columns:1fr 1fr}
+}
+</style>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="hd">
+  <div class="wrap bar">
+    <a href="#top" class="logo">
+      <span class="mark en">U</span>
+      <span><b>UNITED COMPANY</b><small>GROUP ／ NIIGATA</small></span>
+    </a>
+    <nav class="main">
+      <a class="nl" href="#about">会社案内</a>
+      <div class="has-drop"><a class="nl" href="service/index.html">サービス ▾</a>
+        <div class="drop">
+          <a href="service/car-search.html"><span class="di">🔎</span>お車探し・販売</a>
+          <a href="service/shaken.html"><span class="di">🔧</span>車検・点検整備</a>
+          <a href="service/bankin.html"><span class="di">🎨</span>鈑金・塗装</a>
+          <a href="service/kaitori.html"><span class="di">💰</span>買取・査定</a>
+          <a href="service/hosho.html"><span class="di">🛡️</span>保証・アフター</a>
+        </div>
+      </div>
+      <a class="nl" href="#lineup">取扱車種</a>
+      <a class="nl" href="#stock">在庫車</a>
+      <a class="nl" href="#flow">ご購入の流れ</a>
+      <a class="nl" href="#shop">店舗案内</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:18px">
+      <div class="tel-head">
+        <span class="lbl">お気軽にお電話ください</span>
+        <span class="num en">0256-86-2944</span>
+      </div>
+      <a href="#contact" class="btn-line"><span>💬</span>LINEで相談</a>
+      <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<!-- mobile nav -->
+<div class="m-nav" id="mnav">
+  <span class="m-close" id="mclose">×</span>
+  <a href="#about">会社案内<span class="en">ABOUT</span></a>
+  <div class="mg">SERVICE / サービス</div>
+  <a href="service/car-search.html">お車探し・販売</a>
+  <a href="service/shaken.html">車検・点検整備</a>
+  <a href="service/bankin.html">鈑金・塗装</a>
+  <a href="service/kaitori.html">買取・査定</a>
+  <a href="service/hosho.html">保証・アフター</a>
+  <div class="mg">MENU</div>
+  <a href="#lineup">取扱車種<span class="en">LINEUP</span></a>
+  <a href="#stock">在庫車<span class="en">STOCK</span></a>
+  <a href="#flow">ご購入の流れ<span class="en">FLOW</span></a>
+  <a href="#shop">店舗案内<span class="en">SHOP</span></a>
+  <a href="tel:0256862944" style="color:var(--g3)">📞 0256-86-2944</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="slides" id="slides">
+    <div class="slide on" style="background-image:url('images/ext_corner.jpg')"></div>
+    <div class="slide" style="background-image:url('images/int_bright.jpg')"></div>
+    <div class="slide" style="background-image:url('images/ext_wide.jpg')"></div>
+  </div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow"><span class="dot"></span>おしゃれカー専門店 ／ 新潟市西蒲区</span>
+    <h1>全国<span class="hl">131</span>の会場から、<br>あなたの理想の1台を<br><span class="hl">お探し</span>します。</h1>
+    <p class="lead">「車のお探し専門店」UNITED COMPANY GROUP。<br>女性やご家族も気軽に立ち寄れる、カフェのようなお店で。</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">無料でお探し依頼する →</a>
+      <a href="#stock" class="btn btn-ghost">在庫車を見る</a>
+    </div>
+  </div>
+  <div class="scroll-hint en">SCROLL</div>
+  <div class="hero-side">
+    <div class="hero-dots" id="dots">
+      <i class="on"></i><i></i><i></i>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BRANDS ===== -->
+<section class="brands">
+  <div class="wrap row">
+    <div class="b"><b>㈲いばら</b><span>IBARA</span></div>
+    <div class="sep"></div>
+    <div class="b"><b>UNITED CARS</b><span>おしゃれカー専門店</span></div>
+    <div class="sep"></div>
+    <div class="b"><b>United Square Ltd.</b><span>ユナイテッドスクエア㈱</span></div>
+  </div>
+</section>
+
+<!-- ===== ABOUT / MESSAGE ===== -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="en">Our Message</span>
+      <h2>困ったときは、<span class="u">「いばら」</span>。<br>妥協しない車選びを、私たちと。</h2>
+    </div>
+    <div class="msg">
+      <div class="msg-img rv">
+        <img src="images/lot_cars.jpg" alt="UNITED COMPANY GROUP 店舗と展示車">
+        <div class="badge"><b class="en">131</b><span>全国提携オークション会場</span></div>
+      </div>
+      <div class="rv">
+        <h3>在庫の中から選ぶのではなく、<br><span class="u">ご要望から1台を探し出す。</span></h3>
+        <p>展示している在庫から選んでいただくのではなく、まずはお客様のご要望をじっくりヒアリング。全国131の提携オークション会場という膨大な選択肢の中から、ご予算とご希望にぴったりの1台をプロがお探しします。</p>
+        <p>だから「予算内で理想の装備」「あの色のあのグレード」といった、妥協のない車選びが叶います。困ったときにお客様の不安を取り除くことができる——それが私たちUNITED COMPANY GROUPです。</p>
+        <ul class="promises">
+          <li><span class="ck">✓</span>お探し依頼は無料。ご成約まで費用は一切いただきません</li>
+          <li><span class="ck">✓</span>ご要望の1台を、全国から責任を持ってお探しします</li>
+          <li><span class="ck">✓</span>認証工場・鈑金塗装ブース完備で購入後も安心</li>
+          <li><span class="ck">✓</span>充実の保証制度でアフターフォローまでしっかり</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE ===== -->
+<section class="sec cream" id="service">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="en">Service</span>
+      <h2>車のことは、<span class="u">まるごとおまかせ</span>。</h2>
+      <p class="sub">販売から車検・整備、鈑金・塗装、買取まで。カーライフをトータルでサポートします。</p>
+    </div>
+    <div class="svc-grid">
+      <a class="svc rv" href="service/car-search.html"><div class="ic">🔎</div><h4>中古車・新車販売</h4><p>全国131の提携オークション会場から、ご要望に合う1台をお探し。全メーカー・全車種に対応します。</p><span class="more">詳しく見る →</span></a>
+      <a class="svc rv" href="service/shaken.html"><div class="ic">🔧</div><h4>車検・点検整備</h4><p>認証工場完備。日々の点検から車検整備まで、確かな技術で愛車をしっかりメンテナンスします。</p><span class="more">詳しく見る →</span></a>
+      <a class="svc rv" href="service/bankin.html"><div class="ic">🎨</div><h4>鈑金・塗装</h4><p>鈑金・塗装ブース完備。小さなキズからしっかりとした修理まで、美しく仕上げます。</p><span class="more">詳しく見る →</span></a>
+      <a class="svc rv" href="service/kaitori.html"><div class="ic">💰</div><h4>高価買取・査定</h4><p>無料の出張査定に対応。お乗り換えもお買い替えも、まずはお気軽にご相談ください。</p><span class="more">詳しく見る →</span></a>
+      <a class="svc rv" href="service/hosho.html"><div class="ic">🛡️</div><h4>充実の保証制度</h4><p>ご購入後も安心のアフターフォロー。万一のトラブルにも小回りの利く迅速な対応でお応えします。</p><span class="more">詳しく見る →</span></a>
+      <a class="svc rv" href="#contact"><div class="ic">💬</div><h4>LINEオンライン接客</h4><p>ご来店が難しい方も、LINEで気軽に車探しのご相談が可能。画像や動画でのご案内も承ります。</p><span class="more">LINEで相談 →</span></a>
+    </div>
+    <div class="rv" style="text-align:center;margin-top:44px">
+      <a href="service/index.html" class="btn btn-wood">サービスの詳細をすべて見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LINEUP ===== -->
+<section class="sec" id="lineup">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="en">Lineup</span>
+      <h2>取扱車種<span class="u">ラインアップ</span></h2>
+      <p class="sub">全メーカー・全車種を取扱い。あなたのライフスタイルに合う1台がきっと見つかります。</p>
+    </div>
+    <div class="line-grid">
+      <div class="line-cat rv"><div class="emj">🚗</div><div class="cap"><b>軽自動車</b><span>KEI CAR</span></div></div>
+      <div class="line-cat rv"><div class="emj">🚙</div><div class="cap"><b>コンパクトカー</b><span>COMPACT</span></div></div>
+      <div class="line-cat rv"><div class="emj">🚐</div><div class="cap"><b>ミニバン &amp; 1BOX</b><span>MINIVAN</span></div></div>
+      <div class="line-cat rv"><div class="emj">🏔️</div><div class="cap"><b>SUV &amp; RV</b><span>SUV</span></div></div>
+      <div class="line-cat rv"><div class="emj">🚘</div><div class="cap"><b>セダン &amp; ワゴン</b><span>SEDAN</span></div></div>
+      <div class="line-cat rv"><div class="emj">🔋</div><div class="cap"><b>ハイブリッド車</b><span>HYBRID</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STOCK ===== -->
+<section class="sec cream" id="stock">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="en">Pick Up Stock</span>
+      <h2>在庫車 <span class="u">ピックアップ</span></h2>
+      <p class="sub">ほんの一例です。ご希望の車が無くても、全国からお探しできます。</p>
+    </div>
+    <div class="stock-grid">
+      <div class="card rv">
+        <div class="ph"><span class="tag">おすすめ</span><img src="images/car1.jpg" alt="スズキ ソリオ Gリミテッド"></div>
+        <div class="body">
+          <h4>スズキ ソリオ</h4>
+          <div class="grade">Gリミテッド ／ 支払総額はお問い合わせください</div>
+          <div class="price"><span class="p en">39</span><span class="y">万円</span><span class="tax">車両本体価格</span></div>
+        </div>
+      </div>
+      <div class="card rv">
+        <div class="ph"><span class="tag">人気</span><img src="images/car2.jpg" alt="日産 デイズ ハイウェイスターX"></div>
+        <div class="body">
+          <h4>日産 デイズ</h4>
+          <div class="grade">ハイウェイスターX ／ 支払総額はお問い合わせください</div>
+          <div class="price"><span class="p en">55</span><span class="y">万円</span><span class="tax">車両本体価格</span></div>
+        </div>
+      </div>
+      <div class="card rv">
+        <div class="ph"><span class="tag">上質</span><img src="images/car3.jpg" alt="トヨタ アルファード Z"></div>
+        <div class="body">
+          <h4>トヨタ アルファード</h4>
+          <div class="grade">Z ／ 支払総額はお問い合わせください</div>
+          <div class="price"><span class="p en">600</span><span class="y">万円</span><span class="tax">車両本体価格</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="stock-note">※ 掲載車両は一例です。「予算内で探したい」「この車種が欲しい」など、まずはお気軽にご相談ください。</p>
+  </div>
+</section>
+
+<!-- ===== CAFE CONCEPT ===== -->
+<section class="cafe">
+  <div class="inner">
+    <div class="txt rv">
+      <span class="en">Concept</span>
+      <h2>田園を望むカフェのような空間で、<br>ゆっくり車選びを。</h2>
+      <p>「車屋さんは入りにくい」——そんなイメージを変えたくて、店内はまるでカフェのような、居心地の良い空間にしました。大きな窓の向こうに広がる田園風景を眺めながら、デザイナーズチェアでゆったりとおくつろぎください。</p>
+      <p>キッズスペースもご用意しているので、お子様連れのご家族も安心。女性のお客様おひとりでも気軽にお立ち寄りいただけます。無理な営業は一切いたしません。コーヒー片手に、ふらっと遊びに来る感覚でどうぞ。</p>
+      <div class="hero-cta" style="margin-top:28px">
+        <a href="#shop" class="btn btn-primary" style="box-shadow:none">店舗を見る →</a>
+      </div>
+    </div>
+    <div class="pics">
+      <img class="big" src="images/int_bright.jpg" alt="田園を望む明るいカフェのような店内">
+      <img src="images/int_table.jpg" alt="ゆったりくつろげるテーブル席">
+      <img src="images/int_tent.jpg" alt="お子様も遊べるキッズスペース">
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="sec" id="flow">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="en">Flow</span>
+      <h2>ご相談から納車までの<span class="u">流れ</span></h2>
+      <p class="sub">はじめての方も安心。無料のご相談から、納車後のフォローまで丁寧にサポートします。</p>
+    </div>
+    <div class="flow">
+      <div class="step rv"><div class="no en">01</div><div class="st-body"><h4>ご相談・お探し依頼 <span class="en">CONTACT</span></h4><p>ご予算・車種・使い方など、ご希望を何でもお聞かせください。ご来店・お電話・LINEどれでもOK。依頼は無料です。</p></div></div>
+      <div class="step rv"><div class="no en">02</div><div class="st-body"><h4>ヒアリング・ご提案 <span class="en">HEARING</span></h4><p>ご要望をじっくりお伺いし、全国131会場の中から最適な候補をプロがご提案します。</p></div></div>
+      <div class="step rv"><div class="no en">03</div><div class="st-body"><h4>車両の調査・お見積り <span class="en">ESTIMATE</span></h4><p>気になる車両の状態を細かく確認。支払総額を明確にした、わかりやすいお見積りをご提示します。</p></div></div>
+      <div class="step rv"><div class="no en">04</div><div class="st-body"><h4>ご契約 <span class="en">CONTRACT</span></h4><p>内容にご納得いただけたらご契約。ローンや各種手続きもお気軽にご相談ください。</p></div></div>
+      <div class="step rv"><div class="no en">05</div><div class="st-body"><h4>点検・整備・納車 <span class="en">DELIVERY</span></h4><p>認証工場でしっかり整備してからお渡し。ベストコンディションで愛車をお届けします。</p></div></div>
+      <div class="step rv"><div class="no en">06</div><div class="st-body"><h4>アフターフォロー <span class="en">SUPPORT</span></h4><p>車検・点検・鈑金塗装から万一のトラブルまで。購入後もずっと、あなたのカーライフを支えます。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REASON ===== -->
+<section class="sec cream">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="en">Why Chosen</span>
+      <h2>なぜ、ご要望どおりの1台が<br><span class="u">見つかるのか。</span></h2>
+    </div>
+    <div class="reason rv">
+      <div>
+        <h3>秘密は、<span class="u">「在庫を持たない」</span>こと。</h3>
+        <p>一般的なお店では、まず車を仕入れて在庫として展示し、その中からお客様に選んでいただきます。しかしそれでは、選択肢はお店にある在庫の数だけに限られてしまいます。</p>
+        <p>私たちは在庫展示型ではなく<b>「お探し専門」</b>。ご要望をお聞きしてから全国131の会場で探すから、選択肢は桁違い。余分な在庫コストもかからないため、ご希望に近い1台をお値打ちにご用意できるのです。</p>
+      </div>
+      <div class="cmp">
+        <div class="row other"><div class="lbl">一般的なお店</div><b>お店の在庫の中から選ぶ<br>→ 選択肢・条件が限られる</b></div>
+        <div class="arrow">▼</div>
+        <div class="row ours"><div class="lbl">UNITED COMPANY GROUP</div><b>ご要望を聞いてから<span class="hl">全国131会場</span>で探す<br>→ 選択肢は桁違い・妥協なし</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOICES ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="en">Customer Voice</span>
+      <h2>お客様の<span class="u">声</span></h2>
+    </div>
+    <div class="voice-grid">
+      <div class="voice rv"><span class="q en">”</span><div class="stars">★★★★★</div><p>予算内で希望のグレードは無理かなと思っていたら、条件ぴったりの1台を探してくれました。無理な営業もなく、安心してお任せできました。</p><div class="who"><span class="av">Y</span><div><b>Y.T 様</b><span>スズキ ソリオ ご購入</span></div></div></div>
+      <div class="voice rv"><span class="q en">”</span><div class="stars">★★★★★</div><p>店内がカフェみたいで、子ども連れでも全然気を使わずゆっくり選べました。女性ひとりでも入りやすい雰囲気が良かったです。</p><div class="who"><span class="av">M</span><div><b>M.K 様</b><span>日産 デイズ ご購入</span></div></div></div>
+      <div class="voice rv"><span class="q en">”</span><div class="stars">★★★★★</div><p>購入後の車検や整備まで同じお店でお願いできるので安心。困ったときにすぐ相談できる、頼れる存在です。</p><div class="who"><span class="av">S</span><div><b>S.W 様</b><span>トヨタ アルファード ご購入</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SHOP ===== -->
+<section class="sec cream" id="shop">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="en">Shop Info</span>
+      <h2>店舗<span class="u">案内</span></h2>
+    </div>
+    <div class="shop-banner rv">
+      <img src="images/ext_wide.jpg" alt="UNITED COMPANY GROUP（㈲いばら）店舗外観">
+      <div class="sb-cap"><b>新潟市西蒲区・田園に映える一軒家ショップ</b><span>青空の下、ゆったりとした駐車場でお待ちしています</span></div>
+    </div>
+    <div class="shop">
+      <div class="rv">
+        <table class="info-table">
+          <tr><th>店舗名</th><td>UNITED COMPANY GROUP<br><small style="color:var(--ink-soft)">㈲いばら／UNITED CARS／United Square㈱</small></td></tr>
+          <tr><th>所在地</th><td>〒959-0513<br>新潟県新潟市西蒲区茨島996</td></tr>
+          <tr><th>TEL</th><td><a href="tel:0256862944" style="color:var(--wood);font-weight:700;font-family:'Poppins'">0256-86-2944</a></td></tr>
+          <tr><th>FAX</th><td>0256-86-2482</td></tr>
+          <tr><th>営業時間</th><td>8:30 〜 18:30</td></tr>
+          <tr><th>定休日</th><td>第2・第4土曜日、日曜日、祝日</td></tr>
+          <tr><th>事業内容</th><td>新車・中古車販売／車検・点検整備／鈑金・塗装／買取・査定／各種保険</td></tr>
+        </table>
+      </div>
+      <div class="map-box rv">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=%E6%96%B0%E6%BD%9F%E5%B8%82%E8%A5%BF%E8%92%B2%E5%8C%BA%E8%8C%A8%E5%B3%B6996&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT CTA ===== -->
+<section class="sec" id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact-cta rv">
+      <span class="en">Contact</span>
+      <h2>まずは、お気軽にご相談ください。</h2>
+      <p>「こんな車を探している」——そのひと言からお車探しは始まります。お探し依頼は無料です。</p>
+      <a href="tel:0256862944" class="cta-tel en">📞 0256-86-2944 <small>受付 8:30-18:30</small></a>
+      <div class="cta-hours">第2・第4土曜、日曜、祝日は定休日となります</div>
+      <div class="cta-btns">
+        <a href="tel:0256862944" class="btn btn-primary" style="box-shadow:none">電話で相談する</a>
+        <a href="#" class="btn btn-ghost">💬 LINEで相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-brand">
+        <a href="#top" class="logo" style="color:#fff">
+          <span class="mark en">U</span>
+          <span><b>UNITED COMPANY</b><small>GROUP ／ NIIGATA</small></span>
+        </a>
+        <p>新潟市西蒲区のおしゃれカー専門店。<br>全国131の会場から、あなたの理想の1台をお探しします。<br>㈲いばら／UNITED CARS／United Square㈱</p>
+      </div>
+      <div class="f-col">
+        <h5>SERVICE</h5>
+        <a href="service/car-search.html">お車探し・販売</a>
+        <a href="service/shaken.html">車検・点検整備</a>
+        <a href="service/bankin.html">鈑金・塗装</a>
+        <a href="service/kaitori.html">買取・査定</a>
+        <a href="service/hosho.html">保証・アフター</a>
+      </div>
+      <div class="f-col">
+        <h5>CONTACT</h5>
+        <a href="tel:0256862944">TEL：0256-86-2944</a>
+        <a href="#">FAX：0256-86-2482</a>
+        <a href="#shop">新潟県新潟市西蒲区茨島996</a>
+        <a href="#shop">営業 8:30-18:30</a>
+        <a href="#contact">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© UNITED COMPANY GROUP. All Rights Reserved.</span>
+      <div class="f-sns">
+        <a href="#" aria-label="LINE">💬</a>
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="Facebook">👍</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#contact" class="float-line"><span>💬</span>LINEで車探し相談</a>
+
+<script>
+// header solid on scroll
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>{hd.classList.toggle('solid',scrollY>60)});
+// mobile nav
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav'),mclose=document.getElementById('mclose');
+burger.onclick=()=>mnav.classList.add('open');
+mclose.onclick=()=>mnav.classList.remove('open');
+mnav.querySelectorAll('a').forEach(a=>a.onclick=()=>mnav.classList.remove('open'));
+// hero slideshow
+const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('#dots i')];
+let ci=0;
+function go(n){slides[ci].classList.remove('on');dots[ci].classList.remove('on');ci=(n+slides.length)%slides.length;slides[ci].classList.add('on');dots[ci].classList.add('on');}
+dots.forEach((d,i)=>d.onclick=()=>go(i));
+setInterval(()=>go(ci+1),5000);
+// reveal
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
