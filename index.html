@@ -576,8 +576,68 @@ footer{background:#191c21;color:#fff;padding:64px 0 30px}
       <div class="cta-hours">第2・第4土曜、日曜、祝日は定休日となります</div>
       <div class="cta-btns">
         <a href="tel:0256862944" class="btn btn-primary" style="box-shadow:none">電話で相談する</a>
-        <a href="#" class="btn btn-ghost">💬 LINEで相談する</a>
+        <a href="#contact-form" class="btn btn-ghost">✉️ フォームで問い合わせる</a>
       </div>
+    </div>
+
+    <!-- 問い合わせフォーム -->
+    <div class="form-wrap rv" id="contact-form">
+      <div class="head left" style="margin-bottom:28px">
+        <span class="en">Inquiry Form</span>
+        <h2>お問い合わせ<span class="u">フォーム</span></h2>
+        <p class="sub">下記フォームからもお気軽にお問い合わせいただけます。<br>2営業日以内に担当者よりご連絡いたします。</p>
+      </div>
+      <form class="uform" action="https://formsubmit.co/keisuke.tanikawa@nextray.jp" method="POST">
+        <!-- FormSubmit 設定 -->
+        <input type="hidden" name="_subject" value="【HP】お問い合わせがありました｜UNITED COMPANY GROUP">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://nextrayjp.github.io/united-company-group/thanks.html">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+
+        <div class="frow two">
+          <div class="frow">
+            <label for="f-name">お名前<span class="req">必須</span></label>
+            <input id="f-name" type="text" name="お名前" placeholder="山田 太郎" required>
+          </div>
+          <div class="frow">
+            <label for="f-kana">フリガナ<span class="opt">任意</span></label>
+            <input id="f-kana" type="text" name="フリガナ" placeholder="ヤマダ タロウ">
+          </div>
+        </div>
+
+        <div class="frow two">
+          <div class="frow">
+            <label for="f-tel">電話番号<span class="req">必須</span></label>
+            <input id="f-tel" type="tel" name="電話番号" placeholder="090-1234-5678" required>
+          </div>
+          <div class="frow">
+            <label for="f-mail">メールアドレス<span class="opt">任意</span></label>
+            <input id="f-mail" type="email" name="メールアドレス" placeholder="example@mail.com">
+          </div>
+        </div>
+
+        <div class="frow">
+          <label for="f-type">お問い合わせ種別<span class="req">必須</span></label>
+          <select id="f-type" name="お問い合わせ種別" required>
+            <option value="">選択してください</option>
+            <option value="お車探し・購入について">お車探し・購入について</option>
+            <option value="在庫車について">在庫車について</option>
+            <option value="車検・点検整備について">車検・点検整備について</option>
+            <option value="鈑金・塗装について">鈑金・塗装について</option>
+            <option value="買取・査定について">買取・査定について</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+
+        <div class="frow">
+          <label for="f-msg">お問い合わせ内容<span class="req">必須</span></label>
+          <textarea id="f-msg" name="お問い合わせ内容" placeholder="ご希望の車種・ご予算・ご質問など、お気軽にご記入ください。" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit">この内容で送信する →</button>
+        <p class="priv">送信いただいた個人情報は、お問い合わせへの対応のみに利用いたします。<br>お急ぎの場合はお電話（<a href="tel:0256862944" style="color:var(--wood);font-weight:700">0256-86-2944</a>）が確実です。</p>
+      </form>
     </div>
   </div>
 </section>
@@ -604,7 +664,7 @@ footer{background:#191c21;color:#fff;padding:64px 0 30px}
       <div class="f-col">
         <h5>CONTACT</h5>
         <a href="tel:0256862944">TEL：0256-86-2944</a>
-        <a href="#">FAX：0256-86-2482</a>
+        <span style="display:block;padding:7px 0;font-size:14px;color:rgba(255,255,255,.72)">FAX：0256-86-2482</span>
         <a href="#shop">新潟県新潟市西蒲区茨島996</a>
         <a href="#shop">営業 8:30-18:30</a>
         <a href="#contact">お問い合わせ</a>
