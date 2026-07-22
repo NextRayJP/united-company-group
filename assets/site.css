@@ -286,7 +286,7 @@ footer{background:#191c21;color:#fff;padding:64px 0 30px}
   .f-top{grid-template-columns:1fr 1fr}
   .cafe .pics{order:-1}
 }
-@media(max-width:1180px){
+@media(max-width:1240px){
   nav.main,.tel-head,.bar .btn-line{display:none}
   .burger{display:flex}
 }
