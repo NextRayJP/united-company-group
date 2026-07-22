@@ -338,3 +338,7 @@ footer{background:#191c21;color:#fff;padding:64px 0 30px}
 .line-cat .cap b{font-size:18px;font-weight:700;display:block}
 .line-cat .cap span{font-family:"Poppins";font-size:11px;letter-spacing:.15em;opacity:.85}
 @media(max-width:960px){ .group3,.str-grid{grid-template-columns:1fr} }
+
+/* LINE CTA button */
+.btn-line-cta{background:#06c755;color:#fff;box-shadow:0 12px 30px -12px rgba(6,199,85,.7)}
+.btn-line-cta:hover{transform:translateY(-3px)}
